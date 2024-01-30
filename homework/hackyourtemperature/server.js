@@ -1,9 +1,7 @@
 import express from "express";
-
 const app = express();
+const PORT = 3000;
 
-const port = 3000;
-//Middleware 
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -13,7 +11,12 @@ app.get("/", (req, res) => {
 app.post("/weather", (req, res) => {
   const { cityName } = req.body;
 
-  res.send(`You submitted:${cityName}`);
-});
+  if (!cityName) {
+    res.status(400).send("Please provide a valid cityName");
+  } else {
+    res.send(`You submitted:${cityName}`);
+  }
+ });
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
