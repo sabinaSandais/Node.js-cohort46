@@ -3,11 +3,6 @@ const app = express();
 const fs = require("fs");
 app.use(express.json());
 
-// YOUR CODE GOES IN HERE
-app.get("/", function (req, res) {
-  res.send("Hello World");
-});
-
 app.post("/blogs", (req, res) => {
   const { title, content } = req.body;
 
