@@ -1,4 +1,6 @@
 const keys = {
-  API_KEY: "",
+  API_KEY: "6527189f01ec60d474ad747c2e141452",
 };
-module.exports = keys;
+
+export default keys;
+
