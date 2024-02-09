@@ -36,4 +36,8 @@ app.post("/weather", async (req, res) => {
   }
 });
 
+export default app;
+
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
+// export default app;
